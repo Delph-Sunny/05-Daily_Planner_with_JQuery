@@ -2,9 +2,10 @@ body {
   font-family: 'Open Sans', sans-serif;
   font-size: 16px;
   line-height: 1;
+  background-color: peru;
 }
 
-textarea{
+textarea {
   background: transparent;
   border: none;
   resize: none;
@@ -14,18 +15,22 @@ textarea{
 }
 
 .jumbotron {
-  text-align: center;
-  background-color: transparent;
-  color: black;
+  text-align: center; 
+  background-color: #0079bf;
+  color:white;
   border-radius: 0;
   border-bottom: 10px solid black;
 }
 
-.description{
+#currentDay {
+ 
+
+}
+.description {
   white-space: pre-wrap;
 }
 
-.time-block{
+.time-block {
   text-align: center;
   border-radius: 15px;
 }
@@ -57,6 +62,9 @@ textarea{
   color: white;
 }
 
+
+
+/********* Button *********/
 .saveBtn {
   border-left: 1px solid black;
   border-top-right-radius: 15px;
@@ -68,4 +76,21 @@ textarea{
 .saveBtn i:hover {
   font-size: 20px;
   transition: all .3s ease-in-out;
+}
+
+
+/********* Footer *********/
+.footer {
+  background-color:#0079bf;
+  /* or background-color:#6D8EA2;
+  background: linear-gradient(180deg, #42548e 0%, #6b668c 100%);
+  background: linear-gradient(to bottom, #fff 0%, #f7ecff 46%, #d2ecff 74%, #fff 100%);*/
+  border-top: 10px solid black;
+  border-color: black;
+  color: white;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  
 }
