@@ -65,13 +65,13 @@ $(document).ready(function() {
 
     $(".saveBtn").on("click", function(event) {
         var blockIndex = parseInt($(event.target).closest(".time-block").attr("hour-block"));
-        var textArea = $(".description[hour-block='blockIndex']");  //TO FIX: Not working
+        var textArea = $(`.description[hour-block="${blockIndex}"]`);  
         
         var eventTime = {
             time: blockIndex,
-            event: textArea.value,
+            event: textArea.text()   //TO FIX: Not working
         };
-        console.log(textArea.value);   // TO FIX : Testing
+        console.log(textArea);   // TO FIX : Testing
      });
 
    /*** Update clock in footer ***/
