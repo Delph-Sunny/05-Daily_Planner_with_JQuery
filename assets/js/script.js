@@ -41,7 +41,7 @@ $(document).ready(function() {
         }     
     }
     
-    /*** Set the class of textarea ***/
+    /*** Set the class of textarea base on the time***/
     function statusColor() {
         $(".time-block").each(function() {
             var hourBlock = parseInt($(this).attr("hour-block"));
