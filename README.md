@@ -15,9 +15,9 @@ The following criteria are required for this planner:
 ## Installation
 
 Click on this [link] or download the entire repository, unzip the files and double-click on `index.html` to see the page in an internet browser.  
-Enter a new event and click on the Save button to save the new event. Delete the event and click on the Save button to remove an event.  
-The date can be found in the header of the page. 
-A clock displaying the current time was added in the footer.
+Enter a new event and click on the Save button to save the new event. Delete an event and click on the Save button to remove it.  
+The current date can be found in the page header. 
+A clock displaying the current time was added in the page footer.
 
 
 ## Mock-Up model
