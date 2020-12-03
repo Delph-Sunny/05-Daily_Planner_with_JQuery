@@ -1,20 +1,23 @@
 $(document).ready(function() {
-    var currentDay = moment().format('dddd, MMMM Do YYYY');
-    $("#currentDay").text(currentDay); // Display current date in header at loading
-    $("#currentTime").text(moment().format ('hh:mm a')); // Display current time in footer at loading
-    var eventList = {};                                  // To store all events
-   
-    var container = $(".container").addClass("mb-5 pb-5");  
-
+    const container = $(".container").addClass("mb-5 pb-5");    // To improve layout
+    var eventList = {};                                         // To store all events
+    var currentDay = moment().format('dddd, MMMM Do YYYY');     // Get the current date
+    let currentTime = moment().format('hh:mm a');               // Get the current time
+    
+    /*** To display current date and time at loading in Header and Footer***/
+    $("#currentDay").text(currentDay); 
+    $("#currentTime").text(currentTime); 
+      
+    
     /*** Build the planning ***/
     function createPlanning() {
         for (let i = 0; i <= 8; i++){
             let hr = 9 + i;
-            var row = $("<div></div>").attr({
+            let row = $("<div></div>").attr({
                 "class": "row time-block",
                 "hour-block": `${[hr]}`
             });
-            var col1 = $("<div></div>").attr({
+            let col1 = $("<div></div>").attr({
                 "class": "hour px-0 col-sm-2",
                 "hour-block": `${[hr]}`
             });
@@ -25,12 +28,12 @@ $(document).ready(function() {
                col1.text(`${hr - 12}:00 p.m.`);
             };
 
-            var col2 = $("<textarea></textarea>").attr({
+            let col2 = $("<textarea></textarea>").attr({
                 "class": "description col-sm-9",
                 "hour-block": `${[hr]}`
             });
             
-            var col3 = $("<button></button>").attr({
+            let col3 = $("<button></button>").attr({
                 "class": "saveBtn col-sm-1",
                 "hour-block": `${[hr]}` 
             });
@@ -44,9 +47,10 @@ $(document).ready(function() {
     /*** Set the class of textarea base on the time***/
     function statusColor() {
         $(".time-block").each(function() {
-            var hourBlock = parseInt($(this).attr("hour-block"));
-            let textArea = $(".description", this);
-            let currentHr = moment().hour()     // TOFIX: Static hr
+            const hourBlock = parseInt($(this).attr("hour-block"));
+            const textArea = $(".description", this);
+            let currentHr = moment().format('H')  // Get current hour only
+            
             //Change the class based on the current time
             if (hourBlock < currentHr) {
                 textArea.addClass("past");
@@ -56,7 +60,10 @@ $(document).ready(function() {
         });
     }
 
-    // Populate eventList object  
+    createPlanning();
+    statusColor();
+
+    // Populate the eventList object  
     if (localStorage.getItem("eventsList")) {
         eventList = JSON.parse(localStorage.getItem("eventsList"));
     } else {        // if eventsList was empty, create eventList by populating its key time
@@ -73,11 +80,9 @@ $(document).ready(function() {
         };
     }  
     
-    createPlanning();
-    statusColor();
 
     /*** To display all previous events ***/
-    $(".time-block").each(function () {
+    $(".time-block").each(function() {
         let blockIndex = parseInt($(this).attr("hour-block"));
         let text = eventList[blockIndex].eventText; 
         $(`.description[hour-block="${blockIndex}"]`).val(text);
@@ -92,9 +97,9 @@ $(document).ready(function() {
      });
 
     /*** Update clock in footer ***/
-    setInterval(function(){
-        let currentTime = moment().format ('hh:mm a')
-        $("#currentTime").text(currentTime);    // Display current time in footer
+    setInterval(function() {
+      let updateTime = moment().format('hh:mm a')
+        $("#currentTime").text(updateTime);    
     }, 1000);
 
 });
