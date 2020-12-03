@@ -23,9 +23,9 @@ $(document).ready(function() {
             });
             // Change the display for am/pm
             if (hr <= 12) {
-                col1.text(`${hr}:00 a.m.`);
+                col1.text(`${hr}:00 am`);
             } else {
-               col1.text(`${hr - 12}:00 p.m.`);
+               col1.text(`${hr - 12}:00 pm`);
             };
 
             let col2 = $("<textarea></textarea>").attr({
