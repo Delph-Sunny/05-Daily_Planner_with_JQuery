@@ -2,7 +2,7 @@
 ---
 
 ## Description 
-The webpage is a __simple daily planner__ created using JQeury. This app will allow a user to save events for each hour of the day.
+The webpage is a __simple daily planner__ created using JQuery. This app will allow a user to save events for each hour of the day.
 The following criteria are required for this planner:
 - [X] The current day is displayed at the top of the calendar.  
 - [X] When scrolling down, the calendar contains time blocks for standard business hours.  
