@@ -20,11 +20,10 @@ The current date can be found in the page header.
 A clock displaying the current time was added in the page footer.
 
 
-## Mock-Up model
+## Snippet of the app
 
-The following animation demonstrates the application functionalities needed for a daily planner:
 
-![day planner demo](./assets/images/05-third-party-apis-homework-demo.gif)
+![day planner demo](./assets/images/snippet.PNGG)
 
 ## Credits
 
