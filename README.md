@@ -23,7 +23,7 @@ A clock displaying the current time was added in the page footer.
 ## Snippet of the app
 
 
-![day planner demo](./assets/images/snippet.PNGG)
+![day planner demo](./assets/images/snippet.PNG)
 
 ## Credits
 
